@@ -26,9 +26,8 @@ def validate_input(arg_input, list_input):
 
 
 def collect_user_input():
-    # TO DO: # Draft function needs to be refactored.
     """
-    Collects user input and returns a dictionary with Trivia Questions.
+    WIP : Collects user input and returns a dictionary with Trivia Questions.
     """
     player1: str = input("What is your name? : ")
     number_of_questions = int(
@@ -47,6 +46,7 @@ def collect_user_input():
     display_trivia_lists(question_difficulty)
     difficulty = question_difficulty[int(
         input("What difficulty would you like to play? : "))]
+    validate_input(difficulty, question_difficulty)
     print(f"You are playing {difficulty} \n")
 
     return player1, number_of_questions, category_key, difficulty
