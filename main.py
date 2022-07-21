@@ -44,6 +44,8 @@ def collect_user_input():
 
 if __name__ == "__main__":
     user_input: tuple = collect_user_input()
+
+    # Get the questions from the API
     trivia_questions = asyncio.run(get_random_questions(
         user_input[1], user_input[2], user_input[3]))
 
