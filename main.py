@@ -43,10 +43,11 @@ def collect_user_input():
 
 
 if __name__ == "__main__":
-    result: tuple = collect_user_input()
-    asyncio.run(get_random_questions(
-        result[1], result[2], result[3]))
+    user_input: tuple = collect_user_input()
+    trivia_questions = asyncio.run(get_random_questions(
+        user_input[1], user_input[2], user_input[3]))
 
+    print(f"Questions : {trivia_questions}")
 # Store a random selection of questions in a list
 
 # Start a loop and ask the user to answer each question
