@@ -46,11 +46,16 @@ async def get_random_questions(
     logging.info(f"Nr of Questions {questions_count}")
     logging.info(f"Catergory {category_key}")
     logging.info(f"Difficulty {difficulty_value}\n")
+    # levels = ["easy", "medium", "hard"]
 
     questions = await trivia.question(
         amount=questions_count,
         category=category_key,
         difficulty=difficulty_value.lower(),
+        # difficulty=lambda: difficulty_value.lower(
+        # ) if difficulty_value.lower() in levels else 0,
+        
+
         quizType='multiple'
     )
 
