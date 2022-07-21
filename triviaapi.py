@@ -1,8 +1,21 @@
 from trivia import trivia
 import logging
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.WARNING)
 # Logging levels are DEBUG, INFO, WARNING, ERROR, CRITICAL
 # Info: about logging https://realpython.com/python-logging/
+
+# Response format
+# [{
+# 'category': 'Entertainment: Music',
+# 'type': 'multiple',
+# 'difficulty': 'hard',
+# 'question': 'Which band is the longest active band in the world with no breaks or line-up changes?',
+# 'correct_answer': 'U2',
+# 'incorrect_answers': ['Radiohead', 'Rush', 'Rolling Stones']
+# },
+
+# {'category': 'Entertainment: Music', 'type': 'multiple', 'difficulty': 'hard', 'question': 'Which of the following is NOT a real song from the band Thousand Foot Krutch?', 'correct_answer': 'Limitless Fury', 'incorrect_answers': ['Let The Sparks Fly', 'Down', 'Give Up The Ghost']},
+# ]
 
 
 question_category: dict = {
@@ -41,17 +54,5 @@ async def get_random_questions(
         quizType='multiple'
     )
 
-    print(questions)
-
-    # Tmp: response format
-    # [{
-    # 'category': 'Entertainment: Music',
-    # 'type': 'multiple',
-    # 'difficulty': 'hard',
-    # 'question': 'Which band is the longest active band in the world with no breaks or line-up changes?',
-    # 'correct_answer': 'U2',
-    # 'incorrect_answers': ['Radiohead', 'Rush', 'Rolling Stones']
-    # },
-
-    # {'category': 'Entertainment: Music', 'type': 'multiple', 'difficulty': 'hard', 'question': 'Which of the following is NOT a real song from the band Thousand Foot Krutch?', 'correct_answer': 'Limitless Fury', 'incorrect_answers': ['Let The Sparks Fly', 'Down', 'Give Up The Ghost']},
-    # ]
+    logging.info(questions)
+    return questions
