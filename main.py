@@ -27,7 +27,6 @@ def collect_user_input():
     """
     Collects user input and returns a dictionary with Trivia Questions.
     """
-    print(len(question_category))
     player1: str = input("What is your name? : ")
     number_of_questions = int(
         input("How many questions would you like to answer? : "))
