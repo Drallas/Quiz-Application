@@ -1,7 +1,7 @@
 from trivia import trivia
 import logging
 logging.basicConfig(level=logging.DEBUG)
-# Logging options are DEBUG, INFO, WARNING, ERROR, CRITICAL
+# Logging levels are DEBUG, INFO, WARNING, ERROR, CRITICAL
 # Info: about logging https://realpython.com/python-logging/
 
 
