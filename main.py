@@ -1,4 +1,7 @@
-# Quiz Application
+"""
+Real Python : Quiz Application
+"""
+
 import asyncio
 
 # Imports module triviaapi.py
@@ -11,7 +14,7 @@ def display_trivia_lists(trivia_lists):
     print("\n".join(f"{key}: {value}" for key, value in trivia_lists.items()))
 
 
-def validate_input(arg_input,list_input):
+def validate_input(arg_input, list_input):
     """
     Validates user input.
     """
@@ -65,5 +68,6 @@ if __name__ == "__main__":
 # Ask the user to answer each question.
 # Keep track of the number of questions answered correctly.
 # Keep track of the number of questions answered incorrectly.
-# When the user has answered all the questions, show the number of questions answered correctly and incorrectly.
+# When the user has answered all the questions,
+# show the number of questions answered correctly and incorrectly.
 # When the user has answered all the questions, ask the user if they want to play again.

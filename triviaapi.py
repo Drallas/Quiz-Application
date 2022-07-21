@@ -1,5 +1,11 @@
-from trivia import trivia
+"""
+Provides some arithmetic functions
+"""
+
 import logging
+
+from trivia import trivia
+
 logging.basicConfig(level=logging.WARNING)
 # Logging levels are DEBUG, INFO, WARNING, ERROR, CRITICAL
 # Info: about logging https://realpython.com/python-logging/
@@ -9,7 +15,8 @@ logging.basicConfig(level=logging.WARNING)
 # 'category': 'Entertainment: Music',
 # 'type': 'multiple',
 # 'difficulty': 'hard',
-# 'question': 'Which band is the longest active band in the world with no breaks or line-up changes?',
+# 'question': 'Which band is the longest active band
+#  in the world with no breaks or line-up changes?',
 # 'correct_answer': 'U2',
 # 'incorrect_answers': ['Radiohead', 'Rush', 'Rolling Stones']
 # },
@@ -54,7 +61,7 @@ async def get_random_questions(
         difficulty=difficulty_value.lower(),
         # difficulty=lambda: difficulty_value.lower(
         # ) if difficulty_value.lower() in levels else 0,
-        
+
 
         quizType='multiple'
     )
