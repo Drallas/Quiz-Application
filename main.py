@@ -19,10 +19,9 @@ def validate_input(arg_input, list_input):
     Validates user input.
     """
     if arg_input in range(len(list_input)):
-        print("Valid input")
-    else:
-        print("Invalid input")
-        raise SystemExit(1)
+        return True
+    print("Invalid input")
+    raise SystemExit(1)
 
 
 def collect_user_input():
@@ -44,12 +43,13 @@ def collect_user_input():
 
     print("Pick a Difficulty:")
     display_trivia_lists(question_difficulty)
-    difficulty = question_difficulty[int(
-        input("What difficulty would you like to play? : "))]
+    difficulty: int = int(
+        input("What difficulty would you like to play? : "))
     validate_input(difficulty, question_difficulty)
-    print(f"You are playing {difficulty} \n")
+    difficulty_string: str = question_difficulty[difficulty]
+    print(f"You are playing {difficulty_string} \n")
 
-    return player1, number_of_questions, category_key, difficulty
+    return player1, number_of_questions, category_key, difficulty_string
 
 
 if __name__ == "__main__":
