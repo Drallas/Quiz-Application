@@ -1,4 +1,8 @@
 from trivia import trivia
+import logging
+logging.basicConfig(level=logging.DEBUG)
+# Logging options are DEBUG, INFO, WARNING, ERROR, CRITICAL
+# Info: about logging https://realpython.com/python-logging/
 
 
 question_category: dict = {
@@ -16,8 +20,6 @@ question_difficulty: dict = {
     3: "Hard"
 }
 
-# Get Random Quiz questions via the Trivia API
-
 
 async def get_random_questions(
         questions_count: int,
@@ -27,10 +29,10 @@ async def get_random_questions(
     Get a list of random questions from the Trivia API
     """
 
-    # print the parameters
-    print(f"questions {questions_count}")
-    print(f"Catergory {category_key}")
-    print(f"Difficulty {difficulty_value}")
+    logging.info("Getting random questions:")
+    logging.info(f"Nr of Questions {questions_count}")
+    logging.info(f"Catergory {category_key}")
+    logging.info(f"Difficulty {difficulty_value}\n")
 
     questions = await trivia.question(
         amount=questions_count,
