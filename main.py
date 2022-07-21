@@ -2,44 +2,52 @@
 import asyncio
 
 # Imports module triviaapi.py
-from triviaapi import get_random_questions, question_category, question_difficulty
+from triviaapi import (get_random_questions, question_category,
+                       question_difficulty)
+
+
+def display_trivia_lists(trivia_lists):
+    """ Display the trivia lists """
+    print("\n".join(f"{key}: {value}" for key, value in trivia_lists.items()))
+
+
+def validate_input(arg_input,list_input):
+    """
+    Validates user input.
+    """
+    if arg_input in range(len(list_input)):
+        print("Valid input")
+    else:
+        print("Invalid input")
+        raise SystemExit(1)
 
 
 def collect_user_input():
+    # TO DO: # Draft function needs to be refactored.
     """
-    Collect user input for the number of questions, category, and difficulty
+    Collects user input and returns a dictionary with Trivia Questions.
     """
-
-    # Ask the user for their name
-    name: str = input("What is your name? ")
-
-    # Ask the user to enter a number of questions
+    print(len(question_category))
+    player1: str = input("What is your name? : ")
     number_of_questions = int(
-        input("How many questions would you like to answer? "))
+        input("How many questions would you like to answer? : "))
 
-    # Ask the user to enter a category
-    print("Categories:")
-    for key, value in question_category.items():
-        print(f"{key}: {value}")
-    print("\n")
-    category_nr = int(input("What category would you like to play?\n "))
-
+    print("\nPick a Category:")
+    display_trivia_lists(question_category)
+    category_nr = int(input("What category would you like to play? : "))
+    validate_input(category_nr, question_category)
     # Get the key from the dictionary
     category_key = list(question_category.keys())[list(
         question_category.values()).index(question_category[category_nr])]
-    print(f"You are playing {question_category[category_nr]}")
+    print(f"You are playing {question_category[category_nr]} \n")
 
-    # Ask the user to enter a difficulty
-    # Print the difficulties
-    print("Difficulties:")
-    for key, value in question_difficulty.items():
-        print(f"{key}: {value}")
-    print("\n")
-    difficulty_nr = int(input("What difficulty would you like to play?\n"))
+    print("Pick a Difficulty:")
+    display_trivia_lists(question_difficulty)
+    difficulty = question_difficulty[int(
+        input("What difficulty would you like to play? : "))]
+    print(f"You are playing {difficulty} \n")
 
-    difficulty = question_difficulty[difficulty_nr]
-
-    return name, number_of_questions, category_key, difficulty
+    return player1, number_of_questions, category_key, difficulty
 
 
 if __name__ == "__main__":
@@ -50,8 +58,13 @@ if __name__ == "__main__":
         user_input[1], user_input[2], user_input[3]))
 
     print(f"Questions : {trivia_questions}")
-# Store a random selection of questions in a list
 
-# Start a loop and ask the user to answer each question
 
-# Keep track of the number of correct answers
+# TO DO: Build the Quiz Application with data from the API.
+
+# Show the user the questions, 1 at a time.
+# Ask the user to answer each question.
+# Keep track of the number of questions answered correctly.
+# Keep track of the number of questions answered incorrectly.
+# When the user has answered all the questions, show the number of questions answered correctly and incorrectly.
+# When the user has answered all the questions, ask the user if they want to play again.
