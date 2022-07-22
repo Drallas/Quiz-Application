@@ -57,6 +57,7 @@ async def get_random_questions(
     # Return a string with difficulty, but a zero for any difficulty.
     def difficulty(): return difficulty_value.lower(
     ) if difficulty_value.lower() in ["easy", "medium", "hard"] else 0
+
     logging.info(f"Difficulty: {difficulty()}")
 
     questions = await trivia.question(
