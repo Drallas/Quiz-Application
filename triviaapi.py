@@ -19,7 +19,8 @@ question_category: dict = {
     4: "Entertainment: Music",
 }
 
-question_difficulty: dict = {0: "Any Difficulty", 1: "Easy", 2: "Medium", 3: "Hard"}
+question_difficulty: dict = {
+    0: "Any Difficulty", 1: "Easy", 2: "Medium", 3: "Hard"}
 
 
 async def get_random_questions(
@@ -53,4 +54,3 @@ async def get_random_questions(
 
     # logging.info(questions)
     return questions
-
