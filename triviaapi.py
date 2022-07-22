@@ -6,7 +6,7 @@ import logging
 
 from trivia import trivia
 
-logging.basicConfig(level=logging.WARNING)
+logging.basicConfig(level=logging.INFO)
 # Logging levels are DEBUG, INFO, WARNING, ERROR, CRITICAL
 # Info: about logging https://realpython.com/python-logging/
 

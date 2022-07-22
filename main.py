@@ -52,15 +52,20 @@ def collect_user_input():
     return player1, number_of_questions, category_key, difficulty_string
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":   
     user_input: tuple = collect_user_input()
 
     # Get the questions from the API
     trivia_questions = asyncio.run(get_random_questions(
         user_input[1], user_input[2], user_input[3]))
 
-    print(f"Questions : {trivia_questions}")
 
+    enumerate_questions = enumerate(trivia_questions, start=1)
+    print("\n")
+    for question_nr, question in enumerate_questions:
+        print(f"Question {question_nr} : {question['question']}")
+        print(f"Answer : {question['correct_answer']}")
+        print("\n")
 
 # TO DO: Build the Quiz Application with data from the API.
 
