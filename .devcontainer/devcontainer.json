@@ -41,6 +41,14 @@
 				"ms-python.vscode-pylance",
 				"GitHub.copilot",
 				"GitHub.copilot-labs",
+				"WakaTime.vscode-wakatime",
+				"Tyriar.sort-lines",
+				"ms-python.isort",
+				"codezombiech.gitignore",
+				"ms-python.black-formatter",
+				"onlyutkarsh.git-config-user-profiles",
+				"mhutchie.git-graph",
+				"eamodio.gitlens"
 			]
 		}
 	},
